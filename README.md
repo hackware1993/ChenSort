@@ -1,6 +1,6 @@
 Chen sort is an improved bucket sort, which is a general-purpose sorting algorithm.
 
-**The time complexity is O(n) at best and O(nlog2n) at worst, the space complexity is O(n), and it is stable.**
+**The time complexity is O(n) at best and O(nlogn) at worst, the space complexity is O(n), and it is stable.**
 
 Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], average speed is 3 times faster than Quicksort, fastest is 20 times. Traditional counting sorts and bucket sorts cannot handle such a large range of values because the performance is worse than Quicksort.
 
@@ -105,4 +105,4 @@ void chenSort(List<int> list) {
 }
 ```
 
-[Blog](https://mp.weixin.qq.com/s?__biz=Mzk0NTM3MzM4OQ==&amp;mid=2247483744&amp;idx=1&amp;sn=b3680981b81ad58b8bf781647aa18ee5&amp;chksm=c31728c2f460a1d41536fb10a210d576373783faa0b47226833ecf05a5a7c8d6a0824e2b54a1&token=239406941&lang=zh_CN#rd)
+[Blog](https://mp.weixin.qq.com/s/uGNQxpBohPmlgxsHrE4pFg)
