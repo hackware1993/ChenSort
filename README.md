@@ -46,7 +46,7 @@ void chenSort(List<int> list) {
   /// and the maximum and minimum values.
 
   /// Overflow detection
-  BigInt range = BigInt.from(maxValue - minValue);
+  BigInt range = BigInt.from(maxValue) - BigInt.from(minValue);
   if (BigInt.from(range.toInt()) == range) {
     int range = maxValue - minValue;
     double factor = maxBucketIndex / range;
@@ -61,7 +61,7 @@ void chenSort(List<int> list) {
   } else {
     /// Overflowed(positive minus negative)
     int positiveRange = maxValue;
-    int negativeRange = -minValue - 1;
+    int negativeRange = -1 - minValue;
     int positiveStartBucketIndex = maxBucketIndex ~/ 2 + 1;
     int positiveBucketLength = maxBucketIndex - positiveStartBucketIndex;
     int negativeBucketLength = positiveStartBucketIndex - 1;
