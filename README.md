@@ -4,6 +4,8 @@ Chen sort is an improved bucket sort, which is a general-purpose sorting algorit
 
 Average speed is 3 times faster than Quicksort, fastest is 20 times.
 
+Currently writing an academic paper and expecting to be recognized by the academic community.
+
 Dart code:
 
 ```dart
