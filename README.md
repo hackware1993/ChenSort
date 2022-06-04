@@ -1,3 +1,5 @@
+Chen sort is an improved bucket sort, which is a general-purpose sorting algorithm.
+
 **The time complexity is O(n) at best and O(nlog2n) at worst, the space complexity is O(n), and it is stable.**
 
 Average speed is 3 times faster than Quicksort, fastest is 20 times.
