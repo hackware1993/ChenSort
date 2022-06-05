@@ -105,6 +105,115 @@ void chenSort(List<int> list) {
 }
 ```
 
+Java code(Multi-thread):
+
+```java
+static void chenSort(Integer[] list) {
+    int length = list.length;
+    if (length < 2) {
+        return;
+    }
+
+    Integer maxValue = Integer.MIN_VALUE;
+    Integer minValue = Integer.MAX_VALUE;
+    for (Integer element : list) {
+        if (element > maxValue) {
+            maxValue = element;
+        }
+        if (element < minValue) {
+            minValue = element;
+        }
+    }
+
+    /// All elements are the same and do not need to be sorted.
+    if (maxValue.equals(minValue)) {
+        return;
+    }
+
+    /// Limit the maximum size of the bucket to ensure the performance of long list
+    /// sorting, which can be adjusted according to the actual situation.
+    ///
+    /// The essential difference between this and bucket sorting is that the size of
+    /// the bucket is only related to the length of the list, not the range of element values.
+    int bucketSize = Math.min(length, 50000);
+    int maxBucketIndex = bucketSize - 1;
+
+    ArrayList<Integer>[] buckets = new ArrayList[bucketSize];
+    int slot;
+
+    /// Calculate the bucket in which the element is located based on the value of the element
+    /// and the maximum and minimum values.
+
+    /// Overflow detection
+
+    BigInteger bigRange = BigInteger.valueOf(maxValue).subtract(BigInteger.valueOf(minValue));
+    if (BigInteger.valueOf(bigRange.intValue()).equals(bigRange)) {
+        double factor = maxBucketIndex * 1.0 / (maxValue - minValue);
+        for (Integer element : list) {
+            slot = (int) ((element - minValue) * factor);
+            if (buckets[slot] == null) {
+                buckets[slot] = new ArrayList<>();
+            }
+            buckets[slot].add(element);
+        }
+    } else {
+        /// Overflowed(positive minus negative)
+        double positiveRange = maxValue;
+        double negativeRange = -1 - minValue;
+        int positiveStartBucketIndex = maxBucketIndex / 2 + 1;
+        int positiveBucketLength = maxBucketIndex - positiveStartBucketIndex;
+        int negativeBucketLength = positiveStartBucketIndex - 1;
+        Integer zero = 0;
+        for (Integer element : list) {
+            if (element < zero) {
+                slot = (int) (((element - minValue) / negativeRange) * negativeBucketLength);
+            } else {
+                slot = (int) (positiveStartBucketIndex + ((element / positiveRange) * positiveBucketLength));
+            }
+            if (buckets[slot] == null) {
+                buckets[slot] = new ArrayList<>();
+            }
+            buckets[slot].add(element);
+        }
+    }
+
+    Comparator<Integer> comparator = Comparator.comparingInt(left -> left);
+
+    // Multi-thread sorting between buckets
+    CountDownLatch countDownLatch = new CountDownLatch(buckets.length);
+    for (ArrayList<Integer> bucket : buckets) {
+        if (bucket != null) {
+            if (bucket.size() > 1) {
+                executor.execute(() -> {
+                    bucket.sort(comparator);
+                    countDownLatch.countDown();
+                });
+            } else {
+                countDownLatch.countDown();
+            }
+        } else {
+            countDownLatch.countDown();
+        }
+    }
+    try {
+        countDownLatch.await();
+    } catch (InterruptedException ignored) {
+    }
+
+    int index = 0;
+    for (ArrayList<Integer> bucket : buckets) {
+        if (bucket != null) {
+            if (bucket.size() > 1) {
+                for (Integer element : bucket) {
+                    list[index++] = element;
+                }
+            } else {
+                list[index++] = bucket.get(0);
+            }
+        }
+    }
+}
+```
 [Blog](https://mp.weixin.qq.com/s/uGNQxpBohPmlgxsHrE4pFg)
 
 [XiSort](https://github.com/hackware1993/XiSort) The slowest sorting algorithm I've developed with the most efficient code execution in the world.
