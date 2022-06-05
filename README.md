@@ -225,7 +225,7 @@ long range = maxValue - minValue + 1;
 for (int i = 0; i < arr.length; i++) {
     arr[i] = (int) (minValue + random.nextLong(range));
 }
-Integer[] copy = new Integer[numbers];
+Integer[] copy = new Integer[arr.length];
 System.arraycopy(arr, 0, copy, 0, arr.length);
 long start = System.currentTimeMillis();
 chenSort(arr);
