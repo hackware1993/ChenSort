@@ -106,3 +106,5 @@ void chenSort(List<int> list) {
 ```
 
 [Blog](https://mp.weixin.qq.com/s/uGNQxpBohPmlgxsHrE4pFg)
+
+[XiSort](https://github.com/hackware1993/XiSort) The slowest sorting algorithm I've developed with the most efficient code execution in the world.
