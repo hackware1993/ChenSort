@@ -6,9 +6,11 @@ ChenSort is an improved bucket sort, which is a general-purpose sorting algorith
 
 Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], average speed is 3 times faster than Quicksort, fastest is 20 times. Traditional counting sorts and bucket sorts cannot handle such a large range of values because the performance is worse than Quicksort.
 
-[Android APK demo](https://github.com/hackware1993/ChenSort/blob/master/ChenSort_Android.apk)
+[Android APK demo, 6.05 MB](https://github.com/hackware1993/ChenSort/blob/master/ChenSort_Android.apk)
 
-[Windows exe demo](https://github.com/hackware1993/ChenSort/blob/master/ChenSort_Windows.7z)
+[Windows exe demo, 5.8 MB](https://github.com/hackware1993/ChenSort/blob/master/ChenSort_Windows.7z)
+
+The demos are all built on Flutter.
 
 Currently writing an academic paper and expecting to be recognized by the academic community.
 
