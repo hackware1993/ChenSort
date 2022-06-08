@@ -1,4 +1,6 @@
-Chen sort is an improved bucket sort, which is a general-purpose sorting algorithm.
+# ChenSort
+
+ChenSort is an improved bucket sort, which is a general-purpose sorting algorithm.
 
 **The time complexity is O(n) at best and O(nlogn) at worst, the space complexity is O(n), and it is stable.**
 
@@ -256,3 +258,12 @@ chen sort: 2692 ms, quick sort: 9030 ms, 70.18826135105205%(3.3543833580980684x)
 [Blog](https://mp.weixin.qq.com/s/uGNQxpBohPmlgxsHrE4pFg)
 
 [XiSort](https://github.com/hackware1993/XiSort) The slowest sorting algorithm I've developed with the most efficient code execution in the world.
+
+# Support me
+
+If it helps you a lot, consider sponsoring me a cup of milk tea, or giving a star. Your support is
+the driving force for me to continue to maintain.
+
+[Paypal](https://www.paypal.com/paypalme/hackware1993)
+
+![support.webp](https://github.com/hackware1993/flutter-constraintlayout/blob/master/support.webp?raw=true)
