@@ -1,0 +1,21 @@
+name: chensort
+description: The world's fastest general purpose sorting algorithm, 60% faster than Quicksort.
+version: 1.0.0
+anthor: hackware
+homepage: https://github.com/hackware1993/ChenSort
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_constraintlayout: ^1.6.2-stable
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: false
