@@ -272,7 +272,7 @@ the driving force for me to continue to maintain.
 
 [Paypal](https://www.paypal.com/paypalme/hackware1993)
 
-![support.webp](https://github.com/hackware1993/ChenSort/blob/master/sponsorship.webp?raw=true)
+![sponsorship.webp](https://github.com/hackware1993/ChenSort/blob/master/sponsorship.webp?raw=true)
 
 Thanks to the following netizens for their sponsorship.
 
