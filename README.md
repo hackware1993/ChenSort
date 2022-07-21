@@ -113,7 +113,7 @@ void chenSort(List<int> list) {
 }
 ```
 
-Java code(Multi-thread):
+Java code(Multi-thread. The code just shows that this algorithm can easily support multi-threaded sorting, and the actual performance data is performed under a single thread):
 
 ```java
 static void chenSort(Integer[] list) {
