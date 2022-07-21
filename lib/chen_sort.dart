@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -31,13 +32,23 @@ class ChenSortExampleState extends State<ChenSortExample> {
       ),
       body: ConstraintLayout().open(() {
         const Text(
-          'The time complexity is O(n) at best and O(nlog2n) at worst, the space complexity is O(n), and it is stable',
+          'The time complexity is O(n) at best and O(nlogn) at worst, the space complexity is O(n), and it is stable',
           style: TextStyle(
             fontSize: 30,
           ),
         ).applyConstraint(
           width: matchConstraint,
           topCenterTo: parent.leftMargin(20).rightMargin(20),
+        );
+        const Text(
+          'The number of random numbers:',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ).applyConstraint(
+          width: matchParent,
+          top: sId(-1).bottom.margin(32),
         );
         TextField(
           controller: numberCountController,
@@ -90,7 +101,7 @@ class ChenSortExampleState extends State<ChenSortExample> {
         ).applyConstraint(
           width: matchConstraint,
           height: matchConstraint,
-          outBottomCenterTo: rId(1),
+          outBottomCenterTo: rId(2),
           bottom: parent.bottom,
         );
       }),
