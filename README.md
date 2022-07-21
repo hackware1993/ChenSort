@@ -4,7 +4,7 @@ ChenSort is an improved bucket sort, which is a general-purpose sorting algorith
 
 **The time complexity is O(n) at best and O(nlogn) at worst, the space complexity is O(n), and it is stable.**
 
-Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], average speed is 3 times faster than Quicksort, fastest is 20 times. Traditional counting sorts and bucket sorts cannot handle such a large range of values because the performance is worse than Quicksort.
+Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], average speed is 3 times faster than Quicksort, fastest is 20 times(single thread). Traditional counting sorts and bucket sorts cannot handle such a large range of values because the performance is worse than Quicksort.
 
 [Android APK demo, 6.05 MB](https://github.com/hackware1993/ChenSort/blob/master/ChenSort_Android.apk)
 
@@ -222,7 +222,7 @@ static void chenSort(Integer[] list) {
 }
 ```
 
-Performance(10 million random numbers sorted):
+Performance(10 million random numbers sorted, single thread):
 
 ```java
 Random random = new Random();
