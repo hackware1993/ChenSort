@@ -1,6 +1,6 @@
 # ChenSort
 
-ChenSort is an improved bucket sort, which is a general-purpose sorting algorithm.
+ChenSort is an improved bucket sort, which is a general-purpose sorting algorithm. All performance data is performed under a single thread, which can easily support multi-threading.
 
 **The time complexity is O(n) at best and O(nlogn) at worst, the space complexity is O(n), and it is stable.**
 
