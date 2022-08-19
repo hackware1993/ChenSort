@@ -14,8 +14,6 @@ Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], av
 
 The demos are all built on Flutter.
 
-Currently writing an academic paper and expecting to be recognized by the academic community.
-
 Dart code:
 
 ```dart
