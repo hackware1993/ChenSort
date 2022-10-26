@@ -86,14 +86,14 @@ public class ChenSort {
         } else {
             /// Overflowed(positive minus negative)
             double positiveRange = maxValue;
-            double negativeRange = -1 - minValue;
+            double negativeRange = -minValue;
             int positiveStartBucketIndex = maxBucketIndex / 2 + 1;
             int positiveBucketLength = maxBucketIndex - positiveStartBucketIndex;
             int negativeBucketLength = positiveStartBucketIndex - 1;
             Integer zero = 0;
             for (Integer element : array) {
                 if (element < zero) {
-                    slot = (int) (((element - minValue) / negativeRange) * negativeBucketLength);
+                    slot = negativeBucketLength - (int) ((-element / negativeRange) * negativeBucketLength);
                 } else {
                     slot = (int) (positiveStartBucketIndex + ((element / positiveRange) * positiveBucketLength));
                 }
@@ -175,14 +175,14 @@ public class ChenSort {
         } else {
             /// Overflowed(positive minus negative)
             double positiveRange = maxValue;
-            double negativeRange = -1 - minValue;
+            double negativeRange = -minValue;
             int positiveStartBucketIndex = maxBucketIndex / 2 + 1;
             int positiveBucketLength = maxBucketIndex - positiveStartBucketIndex;
             int negativeBucketLength = positiveStartBucketIndex - 1;
             Integer zero = 0;
             for (Integer element : list) {
                 if (element < zero) {
-                    slot = (int) (((element - minValue) / negativeRange) * negativeBucketLength);
+                    slot = negativeBucketLength - (int) ((-element / negativeRange) * negativeBucketLength);
                 } else {
                     slot = (int) (positiveStartBucketIndex + ((element / positiveRange) * positiveBucketLength));
                 }

@@ -184,14 +184,14 @@ void chenSort(List<int> list) {
   } else {
     /// Overflowed(positive minus negative)
     int positiveRange = maxValue;
-    int negativeRange = -1 - minValue;
+    int negativeRange = -minValue;
     int positiveStartBucketIndex = maxBucketIndex ~/ 2 + 1;
     int positiveBucketLength = maxBucketIndex - positiveStartBucketIndex;
     int negativeBucketLength = positiveStartBucketIndex - 1;
     for (final element in list) {
       if (element < 0) {
-        slot = (((element - minValue) / negativeRange) * negativeBucketLength)
-            .toInt();
+        slot = negativeBucketLength -
+            ((-element / negativeRange) * negativeBucketLength).toInt();
       } else {
         slot = positiveStartBucketIndex +
             ((element / positiveRange) * positiveBucketLength).toInt();
