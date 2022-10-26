@@ -4,7 +4,7 @@ ChenSort is an improved bucket sort, which is a general-purpose sorting algorith
 
 **The time complexity is O(n) at best and O(nlogn) at worst, the space complexity is O(n), and it is stable.**
 
-Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], average speed is 3 times faster than Quicksort, fastest is 20 times(single thread). Traditional counting sorts and bucket sorts cannot handle such a large range of values because the performance is worse than Quicksort.
+Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], average speed is 3 times faster than Quicksort, fastest is 20 times. Traditional bucket sort cannot handle such a large range of values, because the performance is much worse than quicksort due to the huge resource consumption.
 
 **All performance data is performed under a single thread, which can easily support multi-threading.**
 
@@ -13,8 +13,6 @@ Randomly generate [1000,10000000] random numbers in the range [-2^63,2^63-1], av
 [Windows exe demo, 5.8 MB](https://github.com/hackware1993/ChenSort/blob/master/ChenSort_Windows.7z)
 
 The demos are all built on Flutter.
-
-Currently writing an academic paper and expecting to be recognized by the academic community.
 
 Dart code:
 
