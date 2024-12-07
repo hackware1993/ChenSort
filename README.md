@@ -1,7 +1,3 @@
-下文《家有三孩的农村独子该如何面对父母双瘫？》
-https://mp.weixin.qq.com/s/lUYAa6IvGOLdwrTnsTpIPg?token=549085630&lang=zh_CN
-是我公众号的原创文章。我正在为当事人筹款，但我没有影响力，所以倍感艰难，希望大家多多支持。数以十万计的 App 从我的代码受益，希望大家也能帮帮我。
-
 # ChenSort
 
 ChenSort is an improved bucket sort, which is a general-purpose sorting algorithm.
